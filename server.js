@@ -31,8 +31,8 @@ var nodemailer = require("nodemailer");
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'ashishkdubey1128@gmail.com',
-    pass: 'ashish11281129'
+    user: 'your email',
+    pass: '************'
   }
 });
 
@@ -50,7 +50,7 @@ var Fraud = require("./models/fraud");
 
 
 app.use(require("express-session")({
-	secret:"Shiv Guru is the best",
+	secret:"ABCD is the best",
 	resave:false,
 	saveUninitialized:false
 }));
@@ -105,7 +105,7 @@ app.post("/signup",function (req,res) {
 
 
 			var mailOptions = {
-  					from: 'ashishkdubey1128@gmail.com',
+  					from: 'Your Email',
   					to: user.email,
   					subject: 'EMAIL VERIFICATION',
   					html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>"
@@ -559,7 +559,7 @@ app.get("/adminaccept/:id1/:id2",function(req,res)
 					console.log(det);
 
 					var mailOptions = {
-  					from: 'ashishkdubey1128@gmail.com',
+  					from: 'Your Email',
   					to: usr.email,
   					subject: 'Request File Details',
   					text: 'Remember this to view file : '+det.secret 
